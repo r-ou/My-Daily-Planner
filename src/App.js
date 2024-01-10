@@ -140,7 +140,7 @@ function App() {
           labelId={props.day}
           onClick={() => deleteIcon(props.day)}
           badgeContent={isSelected ? potentialDay.emoji : undefined}
-          onMouseEnter={isSelected ? (e) => handlePopoverOpen(e, potentialDay.text) : null}
+          onMouseEnter={isSelected && potentialDay.text != "" ? (e) => handlePopoverOpen(e, potentialDay.text) : null}
           onMouseLeave={isSelected ? handlePopoverClose : null}
         >
           <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
